@@ -1,0 +1,162 @@
+﻿<Window x:Class="PROYECTO_FINAL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROYECTO_FINAL"
+        mc:Ignorable="d"
+        Title="SincroPong" Height="650" Width="1100"
+        
+        Icon="/Assets/logoIcono.ico"
+        >
+
+    <!-- cambiar el colorML se usa este solo porque quiero reconocer los elementos-->
+
+    <Grid Background="#fef9ee">
+
+        <!--Deinir las columnas-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230" />
+            <!-- Menú lateral -->
+            <ColumnDefinition Width="56*" />
+            <ColumnDefinition/>
+            <!-- Contenido dinámico -->
+        </Grid.ColumnDefinitions>
+
+
+
+        <!--menu panel-->
+
+        <StackPanel Background="#bb5654"
+                    Width="230"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    >
+
+            <!--Channel Name-->
+            <Grid Height="50" VerticalAlignment="Top" Margin="0,30,0,0" >
+
+                <Border Background="Black" 
+                        Height="25"
+                        CornerRadius="3,0,0,3"
+                        Width="6"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right">
+
+                </Border>
+
+                <TextBlock Text=" G R U P O # 1 " Foreground="#D3D3D3"
+                           FontSize="17"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontFamily="Fonts/#Orbitron Medium"
+                           FontWeight="Bold"
+                           
+                           
+                           
+                           
+                           ></TextBlock>
+
+
+            </Grid>
+
+            <!--Bloque 2-->
+
+            <Grid Height="60" VerticalAlignment="Top" Margin="0,30,0,0">
+                <Image Source="/Assets/logoApp.png" Margin="0,-42,0,-60" ></Image>
+            </Grid>
+
+
+
+            <!--menu pricipal-->
+            <!--menu transparente-->
+            <Menu Height="450" Background="Transparent" Margin="24,40, 0,0 ">
+                <Menu.ItemsPanel>
+                    <ItemsPanelTemplate>
+
+                        <VirtualizingStackPanel Orientation="Vertical" />
+
+                    </ItemsPanelTemplate>
+
+                </Menu.ItemsPanel>
+
+                <!--parte 0-->
+                <MenuItem Header="INICIO" Click="MenuItem_Click" FontSize="17" FontWeight="Bold"
+           
+           Foreground="#D3D3D3" Margin="0,40, 0,20">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="assets/forma-cuadrada-negra-redondeada.png" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+                <!--Parte 1-->
+                <MenuItem Header="JUEGO PING PONG" Click="MenuItem_Click" FontSize="17" FontWeight="Bold"
+                          
+                          Foreground="#D3D3D3">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="assets/ping-pong.png" Margin="0,-6,-5,0" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+                <!--Parte 2-->
+
+                <MenuItem Header="FIGURAS" Click="MenuItem_Click" FontSize="17" FontWeight="Bold"
+             
+             Foreground="#D3D3D3" Margin="0 25 0 0">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="assets/estrella.png" Margin="0,-6,-6,-6" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+                <!--Parte 3-->
+                <MenuItem Header="CONFIGURACIÓN" Click="MenuItem_Click" FontSize="17" FontWeight="Bold"
+   Foreground="#D3D3D3" Margin="0 25 0 0">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="assets/configuraciones.png" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+
+                <!--Parte 4-->
+                <MenuItem Header="SALIR" Click="MenuItem_Click" FontSize="17" FontWeight="Bold"
+Foreground="#D3D3D3" Margin="0 25 0 0">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="assets/volver.png" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+
+
+            </Menu>
+
+        </StackPanel>
+
+
+        <!--Area para generar contenido dinmicao-->
+        <ContentControl                    
+ x:Name="ContenidoDinamico"  Grid.Column="1"  Background="#fef9ee" Grid.ColumnSpan="2"/>
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+# Ignorar archivos y carpetas de Visual Studio
+.vs/
+.vscode/
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.tmp

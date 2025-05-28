@@ -1,0 +1,97 @@
+<UserControl
+    x:Class="PROYECTO_FINAL.vistas.vistaFiguras"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PROYECTO_FINAL"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="av"
+    Background="#fef9ee"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center" Width="460" Height="370">
+
+    <Grid HorizontalAlignment="Left" Width="450" Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Selección de puerto serial -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,10,10,10">
+            <ComboBox x:Name="ComboBoxPorts" Width="150" Margin="0,0,10,0"/>
+            <Button x:Name="ConnectButton" Content="Conectar" Width="80" Click="ConnectButton_Click"/>
+            <Button x:Name="DisconnectButton" Content="Desconectar" Width="80" Margin="10,0,0,0" IsEnabled="False" Click="DisconnectButton_Click"/>
+        </StackPanel>
+
+        <!-- Estado de la conexión -->
+        <TextBlock x:Name="StatusLabel" Grid.Row="1" Text="Desconectado" Foreground="#af3a39" FontFamily="Segoe UI" FontSize="16" Margin="10,0,0,10"/>
+
+        <!-- Texto superior -->
+        <StackPanel Background="Transparent" Orientation="Vertical" Grid.Row="2" Margin="0,0,-60,0">
+            <TextBlock Text="F I G U R A S"
+                       FontSize="68"
+                       FontFamily="Segoe UI"
+                       Foreground="#af3a39"
+                       FontWeight="Bold"
+                       Margin="0,0,0,0"
+                       TextAlignment="Center" Height="106" />
+        </StackPanel>
+
+        <!-- Panel con botones fila 1 -->
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Top"
+                    Margin="10,20,-39,0"
+                    Height="56">
+            <!-- Botón 1: Triángulo -->
+            <Button x:Name="TriangleButton" Background="Transparent" BorderThickness="0" Margin="20,0" Height="39" Click="TriangleButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/assets/flecha-hacia-arriba.png" Width="30" Margin="0,5,5,0"/>
+                    <TextBlock Text="Triángulo" Foreground="#af3a39" FontFamily="Segoe UI" FontSize="20" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <!-- Botón 2: Corazón -->
+            <Button x:Name="HeartButton" Background="Transparent" BorderThickness="0" Margin="20,0" Height="39" Click="HeartButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/assets/me-gusta.png" Width="30" Margin="0,5,5,0" RenderTransformOrigin="0.5,0.765"/>
+                    <TextBlock Text="Corazón" Foreground="#af3a39" FontFamily="Segoe UI" FontSize="20" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <!-- Botón 3: Gato -->
+            <Button x:Name="CatButton" Background="Transparent" BorderThickness="0" Margin="30,0" Height="40" Click="CatButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/assets/refugio-de-animales.png" Width="40" Margin="0,5,5,0"/>
+                    <TextBlock Text="Gato" Foreground="#af3a39" FontFamily="Segoe UI" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <!-- Panel con botones fila 2 -->
+        <StackPanel Grid.Row="4"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Top"
+                    Margin="10,20,-39,0"
+                    Height="56">
+            <!-- Botón 1: Hi! -->
+            <Button x:Name="HiButton" Background="Transparent" BorderThickness="0" Margin="20,0" Height="39" Click="HiButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/assets/hola.png" Width="40" Margin="0,5,5,0"/>
+                    <TextBlock Text="Hi!" Foreground="#af3a39" FontFamily="Segoe UI" FontSize="20" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <!-- Botón 2: Cuadrado -->
+            <Button x:Name="SquareButton" Background="Transparent" BorderThickness="0" Margin="65,0" Height="39" Click="SquareButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/assets/forma-cuadrada-negra-redondeada.png" Width="30" Margin="0,5,5,0" RenderTransformOrigin="0.5,0.765"/>
+                    <TextBlock Text="Cuadrado" Foreground="#af3a39" FontFamily="Segoe UI" FontSize="20" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
